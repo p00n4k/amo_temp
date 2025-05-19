@@ -11,17 +11,20 @@ interface BrandCardProps {
 export default function BrandCard({ imageSrc, redirectUrl, brandName = 'Brand Name' }: BrandCardProps) {
     return (
         <Link href={redirectUrl} target="_blank" rel="noopener noreferrer">
-            <div className="w-48 h-52 rounded-xl overflow-hidden shadow-lg bg-gray-300 hover:shadow-xl transition-shadow duration-300 cursor-pointer">
+            <div className=" h-52 rounded-xl overflow-hidden shadow-lg bg-[#ccccca] hover:shadow-xl transition-shadow duration-300 cursor-pointer">
 
                 {/* Image filling the top 2/3 */}
-                <div className="relative h-2/3 w-full">
-                    <Image
-                        src={imageSrc}
-                        alt={brandName}
-                        fill
-                        className="object-cover"
-                    />
+                <div className="relative h-2/3 w-full p-2">
+                    <div className="relative w-full h-full rounded-md overflow-hidden">
+                        <Image
+                            src={imageSrc}
+                            alt={brandName}
+                            fill
+                            className="object-contain"
+                        />
+                    </div>
                 </div>
+
 
                 {/* Bottom section with brand name and arrow */}
                 <div className="h-1/3 bg-gray-600 text-white flex items-center justify-center gap-2 px-4">
